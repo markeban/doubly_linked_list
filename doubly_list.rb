@@ -15,11 +15,11 @@ class DoublyList
         end
         current.next = Node.new(current, val, nil)
     end
+
     def add_to_tip(val)
-        current           = @head
-        new_node          = Node.new(current, val, current.next)
-        current.next.prev = new_node
-        current.next = new_node
+        new_node = Node.new(nil ,val, @head)
+        @head.prev = new_node
+        @head = new_node
     end
     def return_list
         elements = []
